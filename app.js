@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
 const PunkAPIWrapper = require('punkapi-javascript-wrapper');
+const { getEnabledCategories } = require('trace_events');
 
 const app = express();
 const punkAPI = new PunkAPIWrapper();
@@ -19,8 +20,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Add the route handlers here:
 
 app.get('/', (req, res) => {
-  
+
   res.render('index');
 });
+
+app.get('/beers', (req, res) => {
+  punkAPI
+    .getBeers()
+    .then(beersFromAPI => {
+      res.render('beers', {data: beersFromAPI});
+      console.log('Beers in the frige: ', beersFromAPI);
+    })
+    .catch(error => console.log('Empty fridge, unable to retrieve beers: ', error));
+})
+
+app.get('/random-beer', (req, res) => {
+
+  res.render('random-beer');
+})
 
 app.listen(3000, () => console.log('🏃‍ on port 3000'));
