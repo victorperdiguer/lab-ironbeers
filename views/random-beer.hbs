@@ -1,0 +1,22 @@
+<div id="profile">
+    <div class="beer-profile-image">
+        {{#if this.image_url}}
+        <img src="{{this.image_url}}" alt="{{this.name}}">
+        {{else}}
+        <img src="images/beer.png" alt="No picture available">
+        {{/if}}
+    </div>
+    <div class="information">
+        <h2>{{this.name}}</h2>
+        <h3>{{this.tagline}}</h3>
+        <p>{{this.description}}</p>
+        <h4>Food Pairing</h4>
+        <ul>
+            {{#each this.food_pairing}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <h4>Brewer's Tips</h4>
+        <p>{{brewers_tips}}</p>
+    </div>
+</div>
