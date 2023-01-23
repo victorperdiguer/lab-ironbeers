@@ -29,14 +29,19 @@ app.get('/beers', (req, res) => {
     .getBeers()
     .then(beersFromAPI => {
       res.render('beers', {data: beersFromAPI});
-      console.log('Beers in the frige: ', beersFromAPI);
+      console.log('Beers in the fridge: ', beersFromAPI);
     })
     .catch(error => console.log('Empty fridge, unable to retrieve beers: ', error));
 })
 
 app.get('/random-beer', (req, res) => {
-
-  res.render('random-beer');
+  punkAPI
+    .getRandom()
+    .then(randomBeer => {
+      res.render('random-beer', randomBeer[0]);
+      console.log('Beer in the fridge: ', randomBeer[0]);
+    })
+    .catch(error => console.log('Empty fridge, unable to retrieve beer: ', error));
 })
 
 app.listen(3000, () => console.log('🏃‍ on port 3000'));

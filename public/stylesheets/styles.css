@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&family=Permanent+Marker&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -48,21 +49,160 @@ table {
 }
 
 html {
-    font-family: 'Arial';
+    font-family: 'Inter';
     font-size: 16px;
+    background-color:rgb(221, 240, 252);
+}
+
+nav {
+    background-color: dodgerblue;
+    box-shadow: 1px 1px 5px darkblue;
+    margin-bottom: 5vh;
+}
+
+footer {
+    background-color: black;
+    padding: 1vh 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 60%;
+}
+
+footer h3 {
+    color: white;
+    text-align:center;
+}
+
+nav ul {
+    padding: 2vh;
+    margin-left: 5vw;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 2vw;
+}
+
+nav ul li a, #index button a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 h2 {
     font-size: 1.6rem;
-    font-style: bold;
-    text-decoration: underline;
+    font-family:'Permanent Marker';
+    text-align:center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 h3 {
-    font-style: italic;
-    font-size: 1.3rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align:center;
 }
 
 p {
     font-size: 1rem;
+    text-align:justify;
+}
+
+#all-beers {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content:center;
+    gap: 5vw;
+    margin: 0 5vw;
+}
+
+.beer {
+    width: 12vw;
+}
+
+.beer-image {
+    display:flex;
+    justify-content: center;
+}
+
+.beer-image>img {
+    width: 7vw;
+}
+
+#profile {
+    display: flex;
+    flex-direction: row;
+    align-content:flex-start;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content:center;
+    gap: 5vw;
+    margin-left: auto;
+}
+
+.information ul {
+    font-size: 1rem;
+    list-style:circle;
+    padding-left: 2vw;
+}
+
+.beer-profile-image>img {
+    max-height: 80vh;
+    max-width: 12vw;
+}
+
+.information {
+    max-width: 40vw;
+    line-height: 1.5;
+}
+
+.information h2 {
+    font-size: 2rem;
+    margin-bottom: 2vh;
+}
+
+.information h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5vh;
+    font-style: italic;
+}
+
+.information h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 2vh auto;
+}
+
+#index {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#index-img>img {
+    width: 22vw;
+}
+
+#index-img {
+    margin: 2vh 0;
+}
+
+#index button {
+    background-color: dodgerblue;
+    border: outset 3px;
+    border-color:rgb(30, 126, 221);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 2vh;
+}
+
+#index button:hover {
+    border-style: inset;
 }
